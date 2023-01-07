@@ -1,5 +1,5 @@
 package Models.Servicos;
 
-public interface TaxaServico {
+public interface ServicoTaxaOnline {
     Double Taxa(double montante);
 }

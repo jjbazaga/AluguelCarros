@@ -7,12 +7,12 @@ import java.time.Duration;
 public class ServicoAluguel {
     private Double precoHora;
     private Double precoDia;
-    private TaxaServico taxaServico;
+    private ServicoTaxaOnline taxaServico;
 
     public ServicoAluguel() {
     }
 
-    public ServicoAluguel(Double precoHora, Double precoDia, TaxaServico taxaServico) {  //recebe a injeção de depencias vindo pelo main (upcast)
+    public ServicoAluguel(Double precoHora, Double precoDia, ServicoTaxaOnline taxaServico) {  //recebe a injeção de depencias vindo pelo main (upcast)
         this.precoHora = precoHora;
         this.precoDia = precoDia;
         this.taxaServico = taxaServico;

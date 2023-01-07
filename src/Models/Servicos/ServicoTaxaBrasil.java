@@ -1,6 +1,6 @@
 package Models.Servicos;
 
-public class TaxaServicoBrasil  implements TaxaServico {
+public class ServicoTaxaBrasil implements ServicoTaxaOnline {
 
     @Override
     public Double Taxa(double montante) {
