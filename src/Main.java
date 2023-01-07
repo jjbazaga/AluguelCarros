@@ -1,6 +1,7 @@
 import Models.Entidades.AluguelVeiculo;
 import Models.Entidades.Veiculo;
 import Models.Servicos.ServicoAluguel;
+import Models.Servicos.ServicoTaxaArgentina;
 import Models.Servicos.ServicoTaxaBrasil;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
@@ -30,7 +31,8 @@ public class Main {
         AluguelVeiculo aluguelCarro = new AluguelVeiculo(retirada, retorno, new Veiculo(modelo));
 
         System.out.println();
-        ServicoAluguel servicoAluguel = new ServicoAluguel(precoHora, precoDia, new ServicoTaxaBrasil()); // new TaxaServicoBrasil, injetado por upcast (dependecia)
+        // new TaxaServicoBrasil, injetado por upcast (dependecia)
+        ServicoAluguel servicoAluguel = new ServicoAluguel(precoHora, precoDia, new ServicoTaxaBrasil());
 
         servicoAluguel.ProcessoFatura(aluguelCarro);
 

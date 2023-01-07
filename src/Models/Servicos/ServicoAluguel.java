@@ -7,7 +7,7 @@ import java.time.Duration;
 public class ServicoAluguel {
     private Double precoHora;
     private Double precoDia;
-    private ServicoTaxaOnline taxaServico;
+    private ServicoTaxaOnline servicoTaxaOnline;
 
     public ServicoAluguel() {
     }
@@ -15,7 +15,7 @@ public class ServicoAluguel {
     public ServicoAluguel(Double precoHora, Double precoDia, ServicoTaxaOnline taxaServico) {  //recebe a injeção de depencias vindo pelo main (upcast)
         this.precoHora = precoHora;
         this.precoDia = precoDia;
-        this.taxaServico = taxaServico;
+        this.servicoTaxaOnline = taxaServico;
     }
 
     public void ProcessoFatura(AluguelVeiculo aluguelVeiculo) {
@@ -28,10 +28,8 @@ public class ServicoAluguel {
         } else {
             pagamentoBasico = precoDia * Math.ceil(hours / 24);
         }
-
-        double imposto = taxaServico.Taxa(pagamentoBasico);
+        double imposto = servicoTaxaOnline.Taxa(pagamentoBasico);
         aluguelVeiculo.setFatura(new Fatura(pagamentoBasico, imposto));
-
     }
 }
 
