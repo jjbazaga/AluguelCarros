@@ -40,6 +40,7 @@ public class Main {
         System.out.println("Pagamento basico: " + String.format("%.2f", aluguelCarro.getFatura().getPagamentoBasico()));
         System.out.println("Imposto: " + String.format("%.2f", aluguelCarro.getFatura().getTaxa()));
         System.out.println("Pagamento total: " + String.format("%.2f", aluguelCarro.getFatura().getTotalPagamento()));
+        System.out.println("Olá, teste de commit");
 
         sc.close();
     }
